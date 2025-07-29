@@ -1,9 +1,13 @@
+# Este é um repositório remoto (GitHub), com os arquivos de configuração externos. Exemplo de greeting-service.yaml:
+
 server:
   port:8080
 spring:
   application:
     name: greeting-service
 
+
+# Se você quiser que o microserviço use essas configs abaixo (e sobrescreva as locais), elas serão aplicadas quando o client buscar config remotamente.
 management:
   endpoints:
     web:
@@ -13,6 +17,9 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+
+#Aqui você define os valores externos (que seriam no application.yaml interno) de forma centralizada e versionada.
+#O client vai acessar isso ao iniciar, como se estivesse no próprio application.yaml.
 
 greeting-service:
   greeting: "Hello"
